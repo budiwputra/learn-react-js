@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import Header from "./components/header"
 
 const App = () => {
@@ -15,6 +15,8 @@ const App = () => {
     proName : '',
     proAge : ''
   })
+
+  const [calc, setCalc] = useState(0)
 
   const handleClick = () => {
     console.log('button-click')
@@ -46,10 +48,15 @@ const App = () => {
     }
   }
 
+  useEffect ( () => {
+    console.log('show useEffect')
+  }, []) // [kondisi] useEffect akan jalan ketika memenuhi kondisi, jika tidak hanya 1x saja
+
 
   return (
 
     <>
+    {console.log('show render')}
     <Header/>
     <div>
       <p>Hello World</p>
@@ -115,6 +122,9 @@ const App = () => {
         <p>{`Name : ${inputForm.proName}`}</p>
         <p>{`Age : ${inputForm.proAge}`}</p>
       </form>
+    </div>
+    <div>
+      <button onClick={() => setCalc(calc + 1)} >Calculate : {calc}</button>
     </div>
     </>
 
