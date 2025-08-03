@@ -1,5 +1,6 @@
-import {useState, useEffect, useRef} from 'react'
+import {useState, useEffect} from 'react'
 import Header from "./components/header"
+import Form from "./components/Form"
 import {useCustomHooks} from './hooks/useApp'
 
 const App = () => {
@@ -20,8 +21,6 @@ const App = () => {
     proName : '',
     proAge : ''
   })
-
-  const form = useRef(null)
 
   const [calc, setCalc] = useState(0)
 
@@ -58,14 +57,12 @@ const App = () => {
   }
 
   useEffect ( () => {
-    console.log('show useEffect')
   }, []) // [kondisi] useEffect akan jalan ketika memenuhi kondisi, jika tidak hanya 1x saja
 
 
   return (
 
     <>
-    {console.log('show render')}
     <Header/>
     <div>
       <p>Hello World</p>
@@ -108,33 +105,16 @@ const App = () => {
           }}
           disabled={input === ''}
           >Submit</button>
-        <p>{renderInput()} - {savePriority}</p>
+        <p>{renderInput()}- {savePriority}</p>
         <p>{}</p>  
     </div>
     <div>
-      <h1>Form</h1>
-      <form
-        ref={form}
-        onSubmit={(e) => {
-        e.preventDefault()
-        console.log('form submit', e.target.fieldName.value)
-        console.log('form submit', e.target.fieldAge.value)
-        setInputForm({
-          proName : e.target.fieldName.value,
-          proAge : e.target.fieldAge.value
-        })
-        e.target.reset()
-      }}>
-        <input type="text" name='fieldName' placeholder='Masukkan nama' />
-        <input type="text" name='fieldAge' placeholder='Masukkan umur' />
-        <button type='submit'>Submit</button>
-        <button onClick={() => {
-          form.current.reset()
-
-        }} >Clear</button>
-        <p>{`Name : ${inputForm.proName}`}</p>
-        <p>{`Age : ${inputForm.proAge}`}</p>
-      </form>
+      <Form onSubmit={(e) => {
+        console.log('Component Form', e)
+        setInputForm(e)
+      }}/>
+    <p>{`Name : ${inputForm.proName}`}</p>
+    <p>{`Age : ${inputForm.proAge}`}</p>
     </div>
     <div>
       <button onClick={() => setCalc(calc + 1)} >Calculate : {calc}</button>
