@@ -1,5 +1,6 @@
 import {useState, useEffect, useRef} from 'react'
 import Header from "./components/header"
+import {useCustomHooks} from './hooks/useApp'
 
 const App = () => {
 
@@ -9,7 +10,11 @@ const App = () => {
 
   const [input, setInput] = useState('')
 
+  const [priority, setPriority] = useState('')
+
   const [saveInput, setSaveInput] = useState('')
+
+    const [savePriority, setSavePriority] = useState('')
 
   const [inputForm, setInputForm] = useState({
     proName : '',
@@ -19,6 +24,8 @@ const App = () => {
   const form = useRef(null)
 
   const [calc, setCalc] = useState(0)
+
+  const time = useCustomHooks()
 
   const handleClick = () => {
     console.log('button-click')
@@ -36,7 +43,7 @@ const App = () => {
     ])
   }
 
-  const renderText = () => {
+  const renderInput = () => {
 
     if (saveInput === '') {
       if (input === '') {
@@ -83,7 +90,9 @@ const App = () => {
           setInput(e.target.value)
           console.log('input onChange', e.target.value)
         }} />
-        <input type="text" placeholder='Priority' />
+        <input value={priority} type="text" placeholder='Priority' onChange={(e) => {
+          setPriority(e.target.value)
+        }} />
         <button onClick={() => {
           setInput('')
           saveInput('')        
@@ -94,10 +103,13 @@ const App = () => {
         <button onClick={() => {  
           setSaveInput(input)
           setInput('')
+          setSavePriority(priority)
+          setPriority('')
           }}
           disabled={input === ''}
           >Submit</button>
-        <p>{renderText()}</p>  
+        <p>{renderInput()} - {savePriority}</p>
+        <p>{}</p>  
     </div>
     <div>
       <h1>Form</h1>
@@ -126,6 +138,9 @@ const App = () => {
     </div>
     <div>
       <button onClick={() => setCalc(calc + 1)} >Calculate : {calc}</button>
+    </div>
+    <div>
+      <p>Time : {time}</p>
     </div>
     </>
 
