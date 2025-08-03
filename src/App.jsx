@@ -16,6 +16,8 @@ const App = () => {
     proAge : ''
   })
 
+  const form = useRef(null)
+
   const [calc, setCalc] = useState(0)
 
   const handleClick = () => {
@@ -100,7 +102,7 @@ const App = () => {
     <div>
       <h1>Form</h1>
       <form
-        id='idForm'
+        ref={form}
         onSubmit={(e) => {
         e.preventDefault()
         console.log('form submit', e.target.fieldName.value)
@@ -115,8 +117,7 @@ const App = () => {
         <input type="text" name='fieldAge' placeholder='Masukkan umur' />
         <button type='submit'>Submit</button>
         <button onClick={() => {
-          const form = document.getElementById('idForm')
-          form.reset()
+          form.current.reset()
 
         }} >Clear</button>
         <p>{`Name : ${inputForm.proName}`}</p>
