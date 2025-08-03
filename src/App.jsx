@@ -11,6 +11,11 @@ const App = () => {
 
   const [saveInput, setSaveInput] = useState('')
 
+  const [inputForm, setInputForm] = useState({
+    proName : '',
+    proAge : ''
+  })
+
   const handleClick = () => {
     console.log('button-click')
     setCount(count+1)
@@ -41,6 +46,7 @@ const App = () => {
     }
   }
 
+
   return (
 
     <>
@@ -63,19 +69,16 @@ const App = () => {
       <button onClick={handleAdd}>Tambah</button>
     </div>
     <div>
-      <h1>Form</h1>
-      {/* <form> */}
+      <h1>Input</h1>
         <input value={input} type="text" placeholder='Task name' onChange={(e) => {
           setInput(e.target.value)
           console.log('input onChange', e.target.value)
         }} />
+        <input type="text" placeholder='Priority' />
         <button onClick={() => {
           setInput('')
-          saveInput('')
-        
-        }
-          
-        }
+          saveInput('')        
+        }}
           disabled={input === ''}
           >Clear</button>
         
@@ -86,7 +89,32 @@ const App = () => {
           disabled={input === ''}
           >Submit</button>
         <p>{renderText()}</p>  
-      {/* </form> */}
+    </div>
+    <div>
+      <h1>Form</h1>
+      <form
+        id='idForm'
+        onSubmit={(e) => {
+        e.preventDefault()
+        console.log('form submit', e.target.fieldName.value)
+        console.log('form submit', e.target.fieldAge.value)
+        setInputForm({
+          proName : e.target.fieldName.value,
+          proAge : e.target.fieldAge.value
+        })
+        e.target.reset()
+      }}>
+        <input type="text" name='fieldName' placeholder='Masukkan nama' />
+        <input type="text" name='fieldAge' placeholder='Masukkan umur' />
+        <button type='submit'>Submit</button>
+        <button onClick={() => {
+          const form = document.getElementById('idForm')
+          form.reset()
+
+        }} >Clear</button>
+        <p>{`Name : ${inputForm.proName}`}</p>
+        <p>{`Age : ${inputForm.proAge}`}</p>
+      </form>
     </div>
     </>
 
