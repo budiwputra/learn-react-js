@@ -1,9 +1,14 @@
+import Header from '../components/home/Header'
+import Body from '../components/home/Body'
+
 const Home = () => {
 
     return ( 
-            <div>
-                <h1>Home</h1>
-            </div>
+
+        <div>
+            <Header/>
+            <Body/>
+        </div>
     )
 }
 

@@ -5,6 +5,7 @@ import TodoList from "./pages/TodoList"
 import TaskList from "./pages/TaskList"
 import Sleep from "./pages/Sleep"
 import WrapPage from "./WrapPage"
+import FormAddTodoList from "./pages/FormAddTodoList"
 
 
 const App = () => {
@@ -18,6 +19,8 @@ const App = () => {
       <Route path='tasklist' element={<TaskList/>}/>
       <Route path='sleep' element={<Sleep/>} />
       </Route>
+
+      <Route path='/create-todolist' element={<FormAddTodoList/>} />
 
       {/* <Route path="home">
         <Route index element={<Home/>} />
