@@ -35,14 +35,12 @@ const TodoList = () => {
     }
 
     return (
-        <div>
+        <>
         <Header/>
-
         <div>
         <p>Hello World</p>
         <button onClick={handleClick} >Likes ({count})</button>
         </div>
-
         <div>
         <h1>Todo List</h1>
         {todolist.length === 0 ? (
@@ -69,14 +67,10 @@ const TodoList = () => {
         <div>
         <button onClick={() => setCalc(calc + 1)} >Calculate : {calc}</button>
         </div>
-
         <div>
         <p>Time : {time}</p>
-        </div>
-        </div>
-
-        
-
+        </div> 
+        </>
     )
 }
 

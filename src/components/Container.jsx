@@ -6,29 +6,38 @@ const Container = ({children}) => {
     const listButton = [
         {
             label : 'Home',
-            page : 'home'
+            page : '/'
         },
         {
             label : 'Detail',
-            page : 'detail'
+            page : '/detail'
         },
         {
             label : 'TodoList',
-            page : 'todolist'
+            page : '/todolist'
+        },
+        {
+            label : 'TaskList',
+            page : '/tasklist'
+
+        },
+        {
+            label : 'Sleep',
+            page : '/sleep'
         }
     ]
 
     return (
         <div>
             <div>
-                {listButton.map((item, index) => {
+                {listButton.map((item, index) => (
                     <button
                         key={index}
                         onClick={() => {
                             navigate(item.page)
                         }}
                     >{item.label}</button>
-                })}
+                ))}
             </div>
             {children}
         </div>
