@@ -1,7 +1,12 @@
-import { useNavigate } from "react-router"
+import { useNavigate, useLocation } from "react-router"
+
+import '../css/style.css'
 
 const Container = ({children}) => {
     const navigate = useNavigate()
+    const location = useLocation()
+
+    console.log(location)
 
     const listButton = [
         {
@@ -36,6 +41,10 @@ const Container = ({children}) => {
                         onClick={() => {
                             navigate(item.page)
                         }}
+                        // style={
+                        //     location.pathname === item.page? 
+                        //     {backgroundColor: 'yellow'} : {}}
+                        className={location.pathname === item.page ? 'button-active' : ''}                       
                     >{item.label}</button>
                 ))}
             </div>
