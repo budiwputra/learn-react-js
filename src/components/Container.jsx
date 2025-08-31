@@ -29,6 +29,9 @@ const Container = ({children}) => {
         {
             label : 'Sleep',
             page : '/sleep'
+        },        {
+            label : 'Learn',
+            page : '/learn'
         }
     ]
 
