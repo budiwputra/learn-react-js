@@ -32,6 +32,15 @@ const Container = ({children}) => {
         },        {
             label : 'Learn',
             page : '/learn'
+        },
+        {
+            label : 'Store',
+            page : '/store'
+        }
+        ,
+        {
+            label : 'Todo',
+            page : '/todo'
         }
     ]
 
