@@ -41,6 +41,22 @@ const Container = ({children}) => {
         {
             label : 'Todo',
             page : '/todo'
+        },
+        {
+            label : 'Api',
+            page : '/api'
+        },
+                {
+            label : 'Tasks',
+            page : '/tasks'
+        },
+        {
+            label : 'Product',
+            page : '/product'
+        },
+        {
+            label : 'Product api',
+            page : '/productapi'
         }
     ]
 

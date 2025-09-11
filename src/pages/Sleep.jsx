@@ -9,6 +9,7 @@ const Sleep = () => {
     return (
         <div>
             <h1>Sleep</h1>
+            <input value="SLEEP" type="text" />
             <button
                 onClick={() => {
                     setIsPending(true)

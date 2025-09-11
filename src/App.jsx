@@ -10,6 +10,10 @@ import Learn from "./pages/Learn"
 import Data from "./components/Learn/Data"
 import Todo from "./components/zustand/Todo"
 import AddTodo from "./components/zustand/AddTodo"
+import PlaceholdeApi from "./pages/PlaceholderApi"
+import TaskPage from "./pages/TaskPage"
+import ProductPage from "./pages/ProductPage"
+import Product from "./pages/Product"
 
 
 const App = () => {
@@ -25,8 +29,13 @@ const App = () => {
       <Route path='/learn' element={<Learn/>} />
       <Route path='/store' element={<Data/>} />
       <Route path='/todo' element={<Todo/>} />
+      <Route path='/api' element={<PlaceholdeApi/>} />
+      <Route path='/tasks' element={<TaskPage/>} />
+      <Route path='/product' element={<ProductPage/>} />
+      <Route path='/productapi' element={<Product/>} />
       </Route>
       <Route path='/add-todo' element={<AddTodo/>}/>
+      <Route path='/edit-todo/:id' element={<AddTodo isEdit/>}/>
 
       <Route path='/create-todolist' element={<FormAddTodoList/>} />
 

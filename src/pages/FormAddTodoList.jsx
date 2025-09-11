@@ -1,13 +1,14 @@
-import { useNavigate } from "react-router"
+import { useNavigate} from "react-router"
 import useTodoListStore from "../store/useTodoListStore"
 
 const FormAddTodoList = () => {
     const navigate = useNavigate()
+
     const setList = useTodoListStore((state) => state.setList)  
     const goBack = () => {
         navigate(-1)
     }
-
+    
     return (
 
         <div>

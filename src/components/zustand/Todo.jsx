@@ -4,13 +4,17 @@ import useTodoStore from "../../store/useTodoStore"
 const Todo = () => {
     const navigate = useNavigate()
     const list = useTodoStore((state) => state.list )
+
     return (
         <div>
             <h1>Todo List</h1>
                 {list.length === 0 ? (<p>Belum ada Todo</p>) : (
                     <ul>
                         {list.map((item, index) => (
-                            <li key={index}>{`${item.title} - ${item.desc}`}</li>
+                            <li key={index}>{`${item.title} - ${item.desc} - ${item.category}`}
+                            <button onClick={ () => {navigate(`/edit-todo/${index}`)}}
+                            style={{marginLeft: '12px'}}>Edit</button>
+                            </li>
                         ))}                      
                     </ul>
 
