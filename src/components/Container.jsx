@@ -57,6 +57,10 @@ const Container = ({children}) => {
         {
             label : 'Product api',
             page : '/productapi'
+        },
+        {
+            label : 'Product Entry',
+            page : '/entry'
         }
     ]
 

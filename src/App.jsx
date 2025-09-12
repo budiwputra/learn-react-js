@@ -14,6 +14,7 @@ import PlaceholdeApi from "./pages/PlaceholderApi"
 import TaskPage from "./pages/TaskPage"
 import ProductPage from "./pages/ProductPage"
 import Product from "./pages/Product"
+import ProductEntry from "./pages/ProductEntry"
 
 
 const App = () => {
@@ -33,6 +34,8 @@ const App = () => {
       <Route path='/tasks' element={<TaskPage/>} />
       <Route path='/product' element={<ProductPage/>} />
       <Route path='/productapi' element={<Product/>} />
+      <Route path='/entry' element={<ProductEntry/>} />
+      <Route path='/update/:id' element={<ProductEntry isUpdate />} />
       </Route>
       <Route path='/add-todo' element={<AddTodo/>}/>
       <Route path='/edit-todo/:id' element={<AddTodo isEdit/>}/>

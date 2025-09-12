@@ -8,11 +8,11 @@ export const useGetProduct = () => {
         try {
             const response = await instance.get("/products")
             setProduct(response.data)
-            console.log('response getProduct',response)
+
         } catch (error) {
             console.log(error.response)
         } finally {
-            console.log('done getProduct')
+
         }
     }
 
@@ -24,7 +24,7 @@ export const useGetProduct = () => {
         } catch (error) {
             console.log(error.response)
         } finally {
-            console.log("done addProduct")
+
         }
 
     }
@@ -37,7 +37,7 @@ export const useGetProduct = () => {
         } catch (error) {
             console.log(error.response)
         } finally {
-            console.log("done updateProduct")
+
         }
     }
 
@@ -49,7 +49,7 @@ export const useGetProduct = () => {
         } catch (error) {
             console.log(error.response)
         } finally {
-            console.log("done deleteProduct")
+
         }
     }
 
@@ -61,6 +61,7 @@ export const useGetProduct = () => {
         getProduct,
         addProduct,
         deleteProduct,
+        updateProduct,
         product
     }
 
