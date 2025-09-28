@@ -12,7 +12,6 @@ import Todo from "./components/zustand/Todo"
 import AddTodo from "./components/zustand/AddTodo"
 import PlaceholdeApi from "./pages/PlaceholderApi"
 import TaskPage from "./pages/TaskPage"
-import ProductPage from "./pages/ProductPage"
 import Product from "./pages/Product"
 import ProductEntry from "./pages/ProductEntry"
 
@@ -32,7 +31,6 @@ const App = () => {
       <Route path='/todo' element={<Todo/>} />
       <Route path='/api' element={<PlaceholdeApi/>} />
       <Route path='/tasks' element={<TaskPage/>} />
-      <Route path='/product' element={<ProductPage/>} />
       <Route path='/productapi' element={<Product/>} />
       <Route path='/entry' element={<ProductEntry/>} />
       <Route path='/update/:id' element={<ProductEntry isUpdate />} />

@@ -30,37 +30,29 @@ const Container = ({children}) => {
             label : 'Sleep',
             page : '/sleep'
         },        {
-            label : 'Learn',
+            label : 'Learn [Props]',
             page : '/learn'
         },
         {
-            label : 'Store',
+            label : 'Count [Zustand]',
             page : '/store'
         }
         ,
         {
-            label : 'Todo',
+            label : 'Todo [Zustand]',
             page : '/todo'
         },
         {
-            label : 'Api',
+            label : 'Fetch Api',
             page : '/api'
         },
                 {
-            label : 'Tasks',
+            label : 'Tasks [Mock Api]',
             page : '/tasks'
         },
         {
-            label : 'Product',
-            page : '/product'
-        },
-        {
-            label : 'Product api',
+            label : 'Product [Mock Api]',
             page : '/productapi'
-        },
-        {
-            label : 'Product Entry',
-            page : '/entry'
         }
     ]
 

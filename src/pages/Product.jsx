@@ -8,6 +8,7 @@ const Product = () => {
     return (
         <div>
             <h1>Product Api</h1>
+            <button onClick={() => navigate('/entry')}>Add Product</button>
             <ul>
                 {product.map((item) => (
                     <li key={item.id}>{`${item.id}-${item.title} - ${item.category} - ${item.price}`} 

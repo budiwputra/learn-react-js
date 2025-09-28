@@ -29,6 +29,9 @@ const ProductEntry = ({isUpdate}) => {
     return (
         <div>
             <h1>Product Entry</h1>
+            <button onClick={() => navigate(-1)}>Back</button>
+            <br />
+            <br />
             <form ref={formRef} onSubmit={(e) => {
                 e.preventDefault()
                 if (isUpdate) {
